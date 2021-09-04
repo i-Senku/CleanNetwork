@@ -12,11 +12,10 @@ import '../../freezed/network_error.dart';
 
 class NetworkExecuter{
 
-  static var shared = NetworkExecuter();
 
-  bool debugMode = true;
+  static bool debugMode = true;
 
-  Future<Result<K,NetworkError>> execute<T extends BaseNetworkModel, K>({required BaseClientGenerator route,required T responseType,NetworkOptions? options}) async {
+  static Future<Result<K,NetworkError>> execute<T extends BaseNetworkModel, K>({required BaseClientGenerator route,required T responseType,NetworkOptions? options}) async {
     if(debugMode) print(route);
 
     // Check Network Connectivity

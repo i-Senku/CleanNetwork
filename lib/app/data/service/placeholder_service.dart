@@ -7,6 +7,6 @@ import 'package:clean_network/core/network/layers/network_executer.dart';
 class JsonPlaceHolderService{
   
   Future<Result<List<PostModel>,NetworkError>> posts() async{
-   return NetworkExecuter.execute<PostModel,List<PostModel>>(route: PlaceHolderClient.posts(), responseType: PostModel());
+   return NetworkExecuter.shared.execute<PostModel,List<PostModel>>(route: PlaceHolderClient.posts(), responseType: PostModel());
   }
 }

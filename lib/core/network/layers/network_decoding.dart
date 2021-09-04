@@ -4,7 +4,9 @@ import '../interfaces/base_network_model.dart';
 
 class NetworkDecoding {
 
-  static K decode<T extends BaseNetworkModel, K>({required Response<dynamic> response, required T responseType}) {
+  static var shared = NetworkDecoding();
+
+  K decode<T extends BaseNetworkModel, K>({required Response<dynamic> response, required T responseType}) {
     try {
       if (response.data is List) {
         var list = response.data as List;

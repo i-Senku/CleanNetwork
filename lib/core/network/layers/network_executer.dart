@@ -1,9 +1,9 @@
 import 'package:clean_network/core/freezed/result.dart';
 import 'package:clean_network/core/network/network_options/network_options.dart';
-import 'network_decoding.dart';
+import 'network_decoder.dart';
 import 'package:dio/dio.dart';
 import '../layers/network_connectivity.dart';
-import 'network_request_creator.dart';
+import 'network_creator.dart';
 import '../interfaces/base_client_generator.dart';
 import '../interfaces/base_network_model.dart';
 import '../../freezed/network_error.dart';
@@ -23,7 +23,7 @@ class NetworkExecuter{
 
       try {
         var response = await NetworkCreator.shared.request(route: route,options: options);
-        var data = NetworkDecoding.shared.decode<T, K>(response: response, responseType: responseType);
+        var data = NetworkDecoder.shared.decode<T, K>(response: response, responseType: responseType);
         return Result.success(data);
 
         // NETWORK ERROR

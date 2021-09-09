@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 
 import '../interfaces/base_network_model.dart';
 
-class NetworkDecoding {
+class NetworkDecoder {
 
-  static var shared = NetworkDecoding();
+  static var shared = NetworkDecoder();
 
   K decode<T extends BaseNetworkModel, K>({required Response<dynamic> response, required T responseType}) {
     try {

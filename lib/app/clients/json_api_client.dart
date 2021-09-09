@@ -33,7 +33,7 @@ class PlaceHolderClient extends BaseClientGenerator with _$PlaceHolderClient {
   }
 
   @override
-  Map<String, dynamic>? get body {
+  dynamic get body {
     return this.maybeWhen(
       orElse: () {
         return null; // AKSİ BELİRTİLMEDİKÇE BODY NULL GİDECEK.

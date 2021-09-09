@@ -12,6 +12,7 @@ import '../../freezed/network_error.dart';
 
 class NetworkExecuter{
 
+
   static bool debugMode = true;
 
   static Future<Result<K,NetworkError>> execute<T extends BaseNetworkModel, K>({required BaseClientGenerator route,required T responseType,NetworkOptions? options}) async {
@@ -22,7 +23,7 @@ class NetworkExecuter{
 
       try {
         var response = await NetworkCreator.shared.request(route: route,options: options);
-        var data = NetworkDecoding.decode<T, K>(response: response, responseType: responseType);
+        var data = NetworkDecoding.shared.decode<T, K>(response: response, responseType: responseType);
         return Result.success(data);
 
         // NETWORK ERROR

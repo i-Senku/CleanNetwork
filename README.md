@@ -1,16 +1,36 @@
-# clean_network
+# Flutter Clean Network Layer
 
-A new Flutter project.
+With Flutter's clean network layer, you can dynamically decode models, handle network errors, and create dynamic requests for each client.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+![](assets/compare.jpeg)
 
-A few resources to get you started if this is your first Flutter project:
+## Use Of
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+**Network Executer**
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+NetworkExecuter.execute<PostModel,List<PostModel>>(route: PlaceHolderClient.posts(), responseType: PostModel());
+```
+
+**Network Errors**
+
+```dart
+NetworkError.request({required DioError error})
+NetworkError.type({String? error})
+NetworkError.connectivity({String? message})
+```
+
+## Packages used
+```yaml
+freezed
+json_annotation
+dio
+connectivity
+```
+
+## Articles
+#### English : https://ercangp.medium.com/clean-network-layer-in-flutter-dio-freezed-json-annotation-f5f2c41ac240
+#### Türkçe : https://ercangp.medium.com/flutterda-temiz-network-kullan%C4%B1m%C4%B1-dio-freezed-json-annotation-f61b9df2be08
+
+
